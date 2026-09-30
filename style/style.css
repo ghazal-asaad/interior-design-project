@@ -1,0 +1,665 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Poppins";
+  color: #222222;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1;
+  transition: 0.5s;
+  border-radius: 20px;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.nav {
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  padding: 16px 0;
+  background-color: #222222;
+}
+
+.nav img {
+  width: auto;
+  height: 50px;
+}
+
+.nav ul {
+  list-style: none;
+  float: right;
+  padding-top: 12px;
+}
+
+.nav ul li {
+  display: inline;
+  padding-left: 32px;
+}
+
+.nav ul li a {
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  position: relative;
+}
+
+.nav ul li a::after {
+  content: "";
+  position: absolute;
+  background-color: #e9c37a;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  transition: 0.5s;
+}
+
+.nav ul li a:hover::after {
+  width: 100%;
+  height: 2px;
+}
+
+.hero {
+  background-image: url("../images/hero.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #222222cc;
+}
+
+.hero .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
+
+.hero .content h1 {
+  font-size: 50px;
+}
+
+.hero .content p {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.hero .content button {
+  background-color: #e9c37a;
+  color: #222222;
+  margin: 0 5px;
+}
+
+.hero .content button:hover {
+  background-color: #222222;
+  color: #fff;
+}
+
+.title {
+  text-align: center;
+}
+
+.title h3 {
+  text-transform: uppercase;
+  font-size: 27px;
+  font-weight: 500;
+  padding-left: 50px;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+}
+
+.title h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 40px;
+  height: 3px;
+  background-color: #e9c37a;
+  margin: 0 auto;
+}
+
+.about-section,
+.pricing-section,
+.team-section,
+.why-section {
+  margin: 80px 0;
+  overflow: hidden;
+}
+
+.about-section .box {
+  border: 1px solid #e9c37a;
+  width: 32%;
+  padding: 30px 16px;
+  float: left;
+  position: relative;
+  text-align: center;
+}
+
+.about-section .box2,
+.projects-section .box2,
+.pricing-section .box2 {
+  margin: 0 2%;
+}
+
+.about-section .box .icon {
+  background-color: #e9c37a;
+  color: #222222;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px 0;
+  transition: 0.5s;
+}
+
+.about-section .box h4 {
+  margin: 20px 0;
+}
+
+.about-section .box p {
+  font-size: 14px;
+}
+
+.about-section .box::after {
+  background-color: #e9c37a;
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 0px;
+  width: 100%;
+  z-index: -1;
+  transition: 0.3s;
+}
+
+.about-section .box:hover::after {
+  height: 100%;
+}
+
+.about-section .box:hover .icon {
+  background-color: #fff;
+}
+
+.services-section {
+  background-color: #e9c27a32;
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+.services-section .box {
+  border: 1px solid #e7e5e2;
+  background-color: #fff;
+  width: 25%;
+  padding: 40px 20px;
+  float: left;
+  position: relative;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.services-section .box .numb {
+  color: #e9c37a;
+  font-size: 50px;
+}
+
+.services-section .box p {
+  color: #888;
+  font-size: 14px;
+}
+
+.services-section .box a {
+  text-transform: uppercase;
+  letter-spacing: 1;
+  font-weight: 600;
+  color: #222222;
+  font-size: 14px;
+}
+
+.services-section .box-img {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  z-index: -2;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.services-section .box::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 0%;
+  background-color: #222222c2;
+  z-index: -1;
+  transition: 0.3s;
+}
+
+.services-section .box:hover .box-img {
+  opacity: 1;
+}
+
+.services-section .box:hover::after {
+  height: 100%;
+  width: 100%;
+}
+
+.services-section .box:hover h3,
+.services-section .box:hover p,
+.services-section .box:hover a {
+  color: #fff;
+}
+
+.projects-section {
+  margin: 80px 0;
+  overflow: hidden;
+}
+
+.projects-section .box {
+  width: 32%;
+  float: left;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.projects-section .box2 {
+  margin: 0 2%;
+}
+
+.projects-section .img-box {
+  position: relative;
+}
+
+.projects-section .img-box img {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.projects-section .box .content {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  opacity: 0;
+  transition: 0.9s;
+  z-index: 50;
+}
+
+.projects-section .box::after {
+  background-color: #e9c27ac1;
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 0px;
+  width: 50%;
+  transition: .7s;
+  z-index: 1;
+}
+
+.projects-section .box::before {
+  background-color: #e9c27ac1;
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 0px;
+  width: 50%;
+  transition: .7s;
+  z-index: 1;
+}
+
+.projects-section .box:hover .content {
+  opacity: 1;
+}
+
+.projects-section .box:hover::before {
+  height: 100%;
+}
+
+.projects-section .box:hover::after {
+  height: 100%;
+}
+
+.banner-section {
+  background-image: url("../images/banner.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 400px;
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  color: #fff;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.banner-section::after {
+  position: absolute;
+  content: "";
+  background-color: #22222246;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.banner-section .box {
+  width: 25%;
+  float: left;
+}
+
+.banner-section .box .icon {
+  border: 1px solid #e9c37a;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 25px 0;
+  margin: 0 auto 16px;
+  text-align: center;
+  transition: .5s;
+}
+
+.banner-section .box .icon i {
+  color: #e9c37a;
+  font-size: 50px;
+  transition: .5s;
+}
+
+.banner-section .box .numb {
+  font-size: 35px;
+}
+
+.banner-section .box:hover .icon {
+  background-color: #e9c37a;
+}
+
+.banner-section .box:hover .icon i {
+  color: #fff;
+}
+
+.why-section {
+  background-color: #222222;
+  padding: 50px 0;
+  color: #fff;
+
+}
+
+.why-section .title {
+  text-align: left;
+}
+
+.why-section .left {
+  max-width: 50%;
+  float: left;
+}
+
+.why-section .right {
+  max-width: 50%;
+  float: right;
+}
+
+.why-section img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.why-section .desc-list p {
+  line-height: 35px;
+}
+
+.why-section .desc-list p i {
+  color: #e9c37a;
+  margin-right: 10px;
+}
+
+.pricing-section .box {
+  border: 1px solid #222222;
+  width: 32%;
+  padding: 30px 20px;
+  float: left;
+  text-align: center;
+  transition: .5s;
+}
+
+.pricing-section .box h4 {
+  border: 1px solid #e9c37a;
+  color: #e9c37a;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 4px 15px;
+  margin-bottom: 16px;
+}
+
+.pricing-section .box .price {
+  border-bottom: 1px solid #e9c37a;
+  padding-bottom: 10px;
+}
+
+.pricing-section .box .price p {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.pricing-section .box .price p span {
+  font-size: 16px;
+  color: #e9c37a;
+}
+
+.pricing-section .box .content p {
+  color: #888;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.pricing-section .box a {
+  background-color: #e9c37a;
+  border-radius: 20px;
+  color: #222222;
+  width: 100%;
+  display: block;
+  padding: 8px;
+  text-transform: capitalize;
+  font-weight: 600;
+  transition: .5s;
+}
+
+.pricing-section .box:hover {
+  transform: translateY(-8px);
+}
+
+.pricing-section .box a:hover {
+  background-color: #222222;
+  color: #e9c37a;
+}
+
+.team-section .box {
+  width: 31%;
+  border: 1px solid #222222;
+  float: left;
+  text-align: center;
+  transition: .5s;
+  position: relative;
+}
+
+.team-section .box2 {
+  margin: 0 3%;
+}
+
+.team-section .content {
+  padding: 20px;
+  background-color: #222222;
+  color: #fff;
+}
+
+.team-section .img-box {
+  position: relative;
+}
+
+.team-section .box ul {
+  list-style: none;
+  background-color: #e9c37a;
+  width: 50%;
+  line-height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.team-section .box ul li {
+  float: left;
+  width: 33%;
+}
+
+.team-section .box ul li i {
+  color: #222222;
+  font-size: 20px;
+}
+
+.team-section .box .img-box .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #22222291;
+  color: white;
+  opacity: 0;
+  transition: .8s;
+}
+
+.team-section .box:hover .img-box .overlay {
+  opacity: 1;
+}
+
+.feadback-section {
+  background-color: #f6f6f6;
+  padding: 70px 0;
+  overflow: hidden;
+}
+
+.feadback-section .box {
+  width: 50%;
+  float: left;
+  position: relative;
+}
+
+.feadback-section .avtar {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.feadback-section .avtar img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.feadback-section .content {
+  padding-left: 60px;
+}
+
+.feadback-section span {
+  font-size: 14px;
+  color: #e9c37a;
+  font-weight: 500;
+}
+
+.feadback-section .desc {
+  margin-top: 16px;
+  max-width: 430px;
+}
+
+.footer {
+  background-color: #222222;
+  padding: 50px 0 20px;
+}
+
+.footer img {
+  height: 80px;
+}
+
+.footer p {
+  color: #fff;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.footer ul {
+  float: right;
+  list-style: none;
+  padding-top: 18px;
+}
+
+.footer ul li {
+  display: inline;
+  padding-left: 20px;
+}
+
+.footer ul li a {
+  background-color: #e9c37a;
+  color: #222222;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  padding: 12px 0;
+  transition: .5s;
+}
+
+.footer ul li a:hover {
+  background-color: #fff;
+  transform: translateY(-10px);
+}
